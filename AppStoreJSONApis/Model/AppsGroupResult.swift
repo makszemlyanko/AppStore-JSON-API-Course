@@ -7,13 +7,13 @@
 
 import UIKit
 
-struct AppsGroupReuslt: Decodable {
+struct AppsGroupResult: Decodable {
     let feed: Feed
 }
 
 struct Feed: Decodable {
     let title: String
-    let result: [FeedResult]
+    let results: [FeedResult]
 }
 
 struct FeedResult: Decodable {

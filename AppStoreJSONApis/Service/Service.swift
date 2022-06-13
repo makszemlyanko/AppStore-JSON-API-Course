@@ -40,7 +40,7 @@ class Service {
         }.resume() // fires off the request
     }
     
-    func fetchTopFreeApps(completion: @escaping (AppsGroupReuslt?, Error?) -> ()) {
+    func fetchTopFreeApps(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
         
         guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/50/apps.json") else { return }
         
@@ -52,12 +52,11 @@ class Service {
             }
             
             do {
-                let appGroup = try JSONDecoder().decode(AppsGroupReuslt.self, from: data!)
-                appGroup.feed.result.forEach({print($0.name)})
+                let appGroup = try JSONDecoder().decode(AppsGroupResult.self, from: data!)
                 completion(appGroup, nil)
             } catch {
-                completion(nil, error)
-               // print("Failed to decode: ", error)
+                completion(nil, error) 
+                print("Failed to decode: ", error)
             }
             
             

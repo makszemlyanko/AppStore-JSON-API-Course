@@ -174,8 +174,8 @@
 		15F9CFF52849F969002899B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				15F9CFF62849F983002899B4 /* SearchResult.swift */,
 				15392B262853554500A1A721 /* AppsGroupResult.swift */,
+				15F9CFF62849F983002899B4 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
