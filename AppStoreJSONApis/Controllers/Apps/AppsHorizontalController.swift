@@ -11,7 +11,7 @@ class AppsHorizontalController: BaseListController, UICollectionViewDelegateFlow
     
     let cellId = "cellId"
     
-    var appGroup: AppsGroupResult?
+    var appGroup: AppsGroupResult? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
