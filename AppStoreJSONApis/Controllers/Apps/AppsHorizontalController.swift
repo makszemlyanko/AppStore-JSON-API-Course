@@ -11,7 +11,15 @@ class AppsHorizontalController: HorizontalSnappingController, UICollectionViewDe
     
     let cellId = "cellId"
     
-    var appGroup: AppsGroupResult? 
+    var appGroup: AppsGroupResult?
+    
+    var didSelectHandler: ((FeedResult) -> ())?
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let app = appGroup?.feed.results[indexPath.item] {
+            didSelectHandler?(app)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
