@@ -27,6 +27,7 @@
 		15BA4077284DF9E000638519 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BA4076284DF9E000638519 /* Main.storyboard */; };
 		15BA407A284DF9EB00638519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BA4079284DF9EB00638519 /* ViewController.swift */; };
 		15CC56E328587853006C660D /* SocialApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CC56E228587853006C660D /* SocialApps.swift */; };
+		15CC57392859C762006C660D /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CC57382859C762006C660D /* HorizontalSnappingController.swift */; };
 		15F7DAF12848E3D400440ADD /* 05 UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F7DAF02848E3D400440ADD /* 05 UIView+Layout.swift */; };
 		15F9CFF72849F983002899B4 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9CFF62849F983002899B4 /* SearchResult.swift */; };
 		15F9D03E284B7FB3002899B4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F9D03D284B7FB3002899B4 /* Service.swift */; };
@@ -57,6 +58,7 @@
 		15BA4076284DF9E000638519 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		15BA4079284DF9EB00638519 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15CC56E228587853006C660D /* SocialApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApps.swift; sourceTree = "<group>"; };
+		15CC57382859C762006C660D /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
 		15F7DAF02848E3D400440ADD /* 05 UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "05 UIView+Layout.swift"; sourceTree = "<group>"; };
 		15F9CFF62849F983002899B4 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		15F9D03D284B7FB3002899B4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				157E4F35284F36F2009E14B3 /* Search */,
 				1512C12C2847924D009D52B8 /* BaseTabBarController.swift */,
 				157E4F3B284F38EC009E14B3 /* BaseListController.swift */,
+				15CC57382859C762006C660D /* HorizontalSnappingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				1512C12D2847924D009D52B8 /* BaseTabBarController.swift in Sources */,
 				157E4F43284F3F61009E14B3 /* AppsGroupCell.swift in Sources */,
 				152068E52847BDA3008F15F1 /* AppsSearchController.swift in Sources */,
+				15CC57392859C762006C660D /* HorizontalSnappingController.swift in Sources */,
 				158188752848F1E900E027AE /* VerticalStackView.swift in Sources */,
 				15F9D03E284B7FB3002899B4 /* Service.swift in Sources */,
 				15392B212853338300A1A721 /* AppsHeaderHorizontalController.swift in Sources */,
