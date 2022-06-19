@@ -26,17 +26,17 @@ class Service {
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
-    func fetchTopMusicAlbums(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/music/most-played/25/albums.json"
+    func fetchTopPaidApps(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-paid/25/apps.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
     func fetchTopPodcasts(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/25/podcasts.json"
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/10/podcasts.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
-    // Helper
+    // MARK: - Helper
     func fetchAppGroup(urlString: String, completion: @escaping (AppsGroupResult?, Error?) -> Void) {
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
@@ -46,7 +46,7 @@ class Service {
         fetchGenericJSONData(urlString: urlString, completion: completion)
     }
     
-    // Declare my generic json function here
+    // MARK: - Declare my generic json function here
     func fetchGenericJSONData<T: Decodable>(urlString: String, completion: @escaping (T?, Error?) -> ()) {
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, res, err) in

@@ -59,7 +59,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         
         // Second group
         dispatchGroup.enter()
-        Service.shared.fetchTopMusicAlbums { (appGroup, err) in
+        Service.shared.fetchTopPaidApps { (appGroup, err) in
             dispatchGroup.leave()
             group2 = appGroup
         }
