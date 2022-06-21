@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15089B5028619F990076975B /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15089B4F28619F990076975B /* Reviews.swift */; };
 		1512C118284790C9009D52B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512C117284790C9009D52B8 /* AppDelegate.swift */; };
 		1512C11A284790C9009D52B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512C119284790C9009D52B8 /* SceneDelegate.swift */; };
 		1512C121284790CB009D52B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1512C120284790CB009D52B8 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15089B4F28619F990076975B /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		1512C114284790C9009D52B8 /* AppStoreJSONApis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJSONApis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1512C117284790C9009D52B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1512C119284790C9009D52B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				15392B262853554500A1A721 /* AppsGroupResult.swift */,
 				15F9CFF62849F983002899B4 /* SearchResult.swift */,
 				15CC56E228587853006C660D /* SocialApps.swift */,
+				15089B4F28619F990076975B /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				15392B1E2853274A00A1A721 /* AppsPageHeader.swift in Sources */,
 				15FE33DD2848C31900A91DDB /* SearchResultCell.swift in Sources */,
 				1533743B28604B8900F4F35A /* PreviewCell.swift in Sources */,
+				15089B5028619F990076975B /* Reviews.swift in Sources */,
 				15CC56E328587853006C660D /* SocialApps.swift in Sources */,
 				157E4F3C284F38EC009E14B3 /* BaseListController.swift in Sources */,
 				1595170228508850009FD353 /* Extensions.swift in Sources */,

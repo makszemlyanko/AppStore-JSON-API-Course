@@ -9,10 +9,6 @@ import UIKit
 
 class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    let detailCellId = "detailCellId"
-    let previewCellId = "previewCellId"
-    let reviewCellId = "reviewCellId"
-    
     var appId: String! {
         didSet {
             print("HEre is my app", appId ?? "")
@@ -24,10 +20,30 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
                     self.collectionView.reloadData()
                 }
             }
+            
+            let reviewUrl = "https://itunes.apple.com/us/rss/customerreviews/id=\(appId ?? "")/mostrecent/json"
+            Service.shared.fetchGenericJSONData(urlString: reviewUrl) { (reviews: Reviews?, err) in
+                if let err = err {
+                    print("Failed to decode reviews", err)
+                    return
+                }
+                self.reviews = reviews
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+//                reviews?.feed.entry.forEach({ (entry) in
+//                    print(entry.title, entry.author.label, entry.content)
+//                })
+            }
         }
     }
     
     var app: Result?
+    var reviews: Reviews?
+    
+    let detailCellId = "detailCellId"
+    let previewCellId = "previewCellId"
+    let reviewCellId = "reviewCellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +72,7 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRowCell
+            cell.reviewsController.reviews = self.reviews
             return cell
         }
     }

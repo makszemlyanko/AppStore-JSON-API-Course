@@ -11,6 +11,12 @@ class ReviewController: HorizontalSnappingController, UICollectionViewDelegateFl
     
     let cellId = "cellId"
     
+    var reviews: Reviews? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
@@ -19,16 +25,20 @@ class ReviewController: HorizontalSnappingController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return reviews?.feed.entry.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ReviewCell
+        let entry = self.reviews?.feed.entry[indexPath.item]
+        cell.titleLabel.text = entry?.title.label
+        cell.authorLabel.text = entry?.author.name.label
+        cell.bodyLabel.text = entry?.content.label
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48, height: 250)
+        return .init(width: view.frame.width - 48, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

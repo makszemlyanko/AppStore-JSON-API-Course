@@ -32,7 +32,7 @@ class Service {
     }
     
     func fetchTopPodcasts(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/10/podcasts.json"
+        let urlString = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/25/podcasts.json"
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
