@@ -5,7 +5,7 @@
 //  Created by Maks Kokos on 14.06.2022.
 //
 
-import UIKit
+import Foundation
 
 struct SocialApps: Decodable {
     let id, name, tagline, imageUrl: String

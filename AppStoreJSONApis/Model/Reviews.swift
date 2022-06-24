@@ -5,7 +5,7 @@
 //  Created by Maks Kokos on 21.06.2022.
 //
 
-import UIKit
+import Foundation
 
 struct Reviews: Decodable {
     let feed: ReviewsFeed
@@ -19,6 +19,13 @@ struct Entry: Decodable {
     let author: Author
     let title: Label
     let content: Label
+    
+    let rating: Label
+    
+    private enum CodingKeys: String, CodingKey {
+        case author, title, content
+        case rating = "im:rating"
+    }
 }
 
 struct Label: Decodable {

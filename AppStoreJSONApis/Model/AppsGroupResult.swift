@@ -5,7 +5,7 @@
 //  Created by Maks Kokos on 10.06.2022.
 //
 
-import UIKit
+import Foundation
 
 struct AppsGroupResult: Decodable {
     let feed: Feed
