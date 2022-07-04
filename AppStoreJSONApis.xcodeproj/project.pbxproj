@@ -136,6 +136,7 @@
 		152068E32847BD5B008F15F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				15CC573F2859E384006C660D /* Details */,
 				157E4F36284F3719009E14B3 /* Apps */,
 				157E4F35284F36F2009E14B3 /* Search */,
 				1512C12C2847924D009D52B8 /* BaseTabBarController.swift */,
@@ -167,7 +168,6 @@
 		157E4F36284F3719009E14B3 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				15CC573F2859E384006C660D /* Details */,
 				157E4F37284F3731009E14B3 /* AppsPageController.swift */,
 				157E4F45284F4769009E14B3 /* AppsHorizontalController.swift */,
 				15392B202853338300A1A721 /* AppsHeaderHorizontalController.swift */,
