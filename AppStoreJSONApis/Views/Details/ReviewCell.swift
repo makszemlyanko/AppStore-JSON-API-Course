@@ -16,7 +16,7 @@ class ReviewCell: UICollectionViewCell {
     let starsStackView: UIStackView = {
         var arrangedSubviews = [UIView]()
         (0..<5).forEach { (_) in
-            let imageView = UIImageView(image: #imageLiteral(resourceName: "Star 12"))
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "star"))
             imageView.constrainWidth(constant: 24 )
             imageView.constrainHeight(constant: 24)
             arrangedSubviews.append(imageView)
