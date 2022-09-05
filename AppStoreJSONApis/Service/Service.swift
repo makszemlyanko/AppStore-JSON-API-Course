@@ -31,11 +31,6 @@ class Service {
         fetchAppGroup(urlString: urlString, completion: completion)
     }
     
-    func fetchTopPodcasts(completion: @escaping (AppsGroupResult?, Error?) -> ()) {
-        let urlString = "https://rss.applemarketingtools.com/api/v2/us/podcasts/top/25/podcasts.json"
-        fetchAppGroup(urlString: urlString, completion: completion)
-    }
-    
     // MARK: - Helper
     func fetchAppGroup(urlString: String, completion: @escaping (AppsGroupResult?, Error?) -> Void) {
         fetchGenericJSONData(urlString: urlString, completion: completion)

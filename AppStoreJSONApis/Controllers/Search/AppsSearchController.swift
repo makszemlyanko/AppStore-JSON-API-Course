@@ -109,3 +109,4 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
     }
 
 }
+

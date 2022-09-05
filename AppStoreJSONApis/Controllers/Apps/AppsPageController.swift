@@ -21,6 +21,9 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         return aiv
     }()
     
+    var socialApps = [SocialApps]()
+    var groups = [AppsGroupResult]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,24 +39,18 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
-   // var topFreeApps: AppsGroupResult?
-    var socialApps = [SocialApps]()
-    var groups = [AppsGroupResult]()
-    
-    
     fileprivate func fetchData() {
         
         var group1: AppsGroupResult?
         var group2: AppsGroupResult?
-        var group3: AppsGroupResult?
-        
         
         // Help to sync your data fetches together
         let dispatchGroup = DispatchGroup()
         
         // First group
         dispatchGroup.enter()
-        Service.shared.fetchTopFreeApps { (appGroup, err) in            dispatchGroup.leave()
+        Service.shared.fetchTopFreeApps { (appGroup, err) in
+            dispatchGroup.leave()
             group1 = appGroup
         }
         
@@ -62,13 +59,6 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         Service.shared.fetchTopPaidApps { (appGroup, err) in
             dispatchGroup.leave()
             group2 = appGroup
-        }
-        
-        // Third group
-        dispatchGroup.enter()
-        Service.shared.fetchTopPodcasts { (appGroup, err) in
-            dispatchGroup.leave()
-            group3 = appGroup
         }
         
         // Header group
@@ -89,9 +79,6 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
             if let group = group2 {
                 self.groups.append(group)
             }
-            if let group = group3 {
-                self.groups.append(group)
-            }
             self.collectionView.reloadData()
         }
     }
@@ -108,7 +95,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return groups.count
+        groups.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

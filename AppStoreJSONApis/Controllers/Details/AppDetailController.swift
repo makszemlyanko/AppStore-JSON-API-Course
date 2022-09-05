@@ -11,6 +11,10 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
     
     fileprivate let appId: String
     
+    let detailCellId = "detailCellId"
+    let previewCellId = "previewCellId"
+    let reviewCellId = "reviewCellId"
+    
     // dependency injection constructor
     init(appId: String) {
         self.appId = appId
@@ -24,20 +28,18 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
     var app: Result?
     var reviews: Reviews?
     
-    let detailCellId = "detailCellId"
-    let previewCellId = "previewCellId"
-    let reviewCellId = "reviewCellId"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        setupCollectionView()
+        fetchData()
+    }
+    
+    fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
-        
         collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
         collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: previewCellId)
         collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: reviewCellId)
-        
-        navigationItem.largeTitleDisplayMode = .never
-        fetchData()
     }
     
     fileprivate func fetchData() {
@@ -58,18 +60,14 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
                 return
             }
             self.reviews = reviews
-           // reviews?.feed.entry.forEach({print($0.rating.label)})
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-//                reviews?.feed.entry.forEach({ (entry) in
-//                    print(entry.title, entry.author.label, entry.content)
-//                })
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
