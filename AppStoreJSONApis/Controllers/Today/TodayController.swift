@@ -11,6 +11,10 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     fileprivate let cellId = "cellId"
     
+    fileprivate var startingFrame: CGRect?
+    
+    var appFullScreenController: UIViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
@@ -20,7 +24,33 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("ANimate full screen")
+        let appFullScreenController = AppDetailFullScreenController()
+        let detailView = appFullScreenController.view!
+        detailView.layer.cornerRadius = 16
+        detailView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
+        view.addSubview(detailView)
+        addChild(appFullScreenController)
+        self.appFullScreenController = appFullScreenController
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+        self.startingFrame = startingFrame
+        detailView.frame = startingFrame
+        
+        UIView.animate(withDuration: 0.5, delay:  0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            detailView.frame = self.view.frame
+            self.tabBarController?.tabBar.isHidden = true
+        }, completion: nil)
+    }
+    
+    @objc fileprivate func handleRemoveRedView(gesture: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.5, delay:  0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            gesture.view?.frame = self.startingFrame ?? .zero
+            self.tabBarController?.tabBar.isHidden = false
+        }, completion: { _ in
+            gesture.view?.removeFromSuperview()
+            self.appFullScreenController.removeFromParent()
+        })
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
