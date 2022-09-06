@@ -131,3 +131,4 @@ extension MusicController: UICollectionViewDelegateFlowLayout, UISearchBarDelega
         .init(width: view.frame.width, height: 100)
     }
 }
+
