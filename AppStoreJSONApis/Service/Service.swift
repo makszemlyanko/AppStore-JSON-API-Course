@@ -11,6 +11,15 @@ class Service {
     
     static let shared = Service() // singleton
     
+    // MARK: - Saerch Music
+    func fetchMusic(searchTerm: String, offset: String, completion: @escaping (MusicResult?, Error?) -> ()) {
+        print("Fetching iTunes Music")
+        
+        let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&offset=\(offset)&limit=20"
+        
+        fetchGenericJSONData(urlString: urlString, completion: completion)
+    }
+    
     // MARK: - Search Controller
     func fetchApps(searchTerm: String, completion: @escaping (SearchResult?, Error?) -> ()) {
         print("Fetching iTunes Apps from Service layer")

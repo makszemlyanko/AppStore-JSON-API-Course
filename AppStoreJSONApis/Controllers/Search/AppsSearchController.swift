@@ -9,6 +9,8 @@ import UIKit
 import SDWebImage
 
 class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    
+    fileprivate var appResults = [Result]()
 
     fileprivate let cellId = "id1234"
     
@@ -21,6 +23,8 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         label.font = .boldSystemFont(ofSize: 20)
         return label
     }()
+    
+    var timer: Timer?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let appId = String(appResults[indexPath.item].trackId)
@@ -51,8 +55,6 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         searchController.searchBar.delegate = self
     }
     
-    var timer: Timer?
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
@@ -74,8 +76,6 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
             }
         })
     }
-    
-    fileprivate var appResults = [Result]()
     
     fileprivate func fetchITunesApps() {
         Service.shared.fetchApps(searchTerm: "Twitter") { (res, err) in
