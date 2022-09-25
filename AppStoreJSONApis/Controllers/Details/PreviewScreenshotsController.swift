@@ -9,7 +9,7 @@ import UIKit
 
 class PreviewScreenshotsController: HorizontalSnappingController, UICollectionViewDelegateFlowLayout {
     
-    let cellId = "cellId"
+    private let cellId = "cellId"
     
     var app: Result? {
         didSet {
@@ -23,7 +23,6 @@ class PreviewScreenshotsController: HorizontalSnappingController, UICollectionVi
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-            imageView.backgroundColor = .systemPink
             addSubview(imageView)
             imageView.fillSuperview()
         }
@@ -54,5 +53,4 @@ class PreviewScreenshotsController: HorizontalSnappingController, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 250, height: view.frame.height)
     }
-    
 }

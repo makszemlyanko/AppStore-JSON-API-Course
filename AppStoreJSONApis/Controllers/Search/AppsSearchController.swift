@@ -10,13 +10,13 @@ import SDWebImage
 
 class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
-    fileprivate var appResults = [Result]()
+    private var appResults = [Result]()
 
-    fileprivate let cellId = "id1234"
+    private let cellId = "id1234"
     
-    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
     
-    fileprivate let enterSearchTermLabel: UILabel = {
+    private let enterSearchTermLabel: UILabel = {
         let label = UILabel()
         label.text = "Please enter search term above..."
         label.textAlignment = .center
@@ -24,7 +24,7 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         return label
     }()
     
-    var timer: Timer?
+    private var timer: Timer?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let appId = String(appResults[indexPath.item].trackId)
@@ -42,9 +42,6 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         enterSearchTermLabel.fillSuperview(padding: .init(top: 200, left: 50, bottom: 0, right: 50))
         
         setupSearchBar()
-        
-   //     fetchITunesApps()
-
     }
     
     fileprivate func setupSearchBar() {
@@ -59,7 +56,6 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         print(searchText)
         
         // introduce some delay before permorming the search
-        
         timer?.invalidate()
         timer = .scheduledTimer(withTimeInterval:  0.5, repeats: false, block: { (_) in
             
@@ -77,7 +73,7 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         })
     }
     
-    fileprivate func fetchITunesApps() {
+    private func fetchITunesApps() {
         Service.shared.fetchApps(searchTerm: "Twitter") { (res, err) in
             
             if let err = err {

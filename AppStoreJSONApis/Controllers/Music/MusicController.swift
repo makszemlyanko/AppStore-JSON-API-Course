@@ -17,7 +17,7 @@ class MusicController: BaseListController {
     
     private var isPaginating = false // don't fetch too many data
     
-    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
     
     fileprivate let enterSearchTermLabel: UILabel = {
         let label = UILabel()
@@ -29,7 +29,7 @@ class MusicController: BaseListController {
     
     var musicResult = [Music]()
     
-    var timer: Timer?
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +41,12 @@ class MusicController: BaseListController {
         
         collectionView.register(MusicCell.self, forCellWithReuseIdentifier: cellId)
         
-        // register footer
         collectionView.register(MusicLoadingFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footerId)
         
         setupSearchBar()
     }
     
-    fileprivate func setupSearchBar() {
+    private func setupSearchBar() {
         definesPresentationContext = true
         navigationItem.searchController = self.searchController
         navigationItem.hidesSearchBarWhenScrolling = false

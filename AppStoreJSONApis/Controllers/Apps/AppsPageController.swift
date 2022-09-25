@@ -39,7 +39,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
-    fileprivate func fetchData() {
+    private func fetchData() {
         
         var group1: AppsGroupResult?
         var group2: AppsGroupResult?

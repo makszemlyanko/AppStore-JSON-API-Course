@@ -14,7 +14,6 @@
 		1512C124284790CB009D52B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1512C122284790CB009D52B8 /* LaunchScreen.storyboard */; };
 		1512C12D2847924D009D52B8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1512C12C2847924D009D52B8 /* BaseTabBarController.swift */; };
 		152068E52847BDA3008F15F1 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152068E42847BDA3008F15F1 /* AppsSearchController.swift */; };
-		152F185A28C666CA00EE49D8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 152F185928C666CA00EE49D8 /* .gitignore */; };
 		152F185F28C720B900EE49D8 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F185E28C720B900EE49D8 /* MusicController.swift */; };
 		152F186428C721AF00EE49D8 /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F186328C721AF00EE49D8 /* MusicCell.swift */; };
 		152F186728C7280900EE49D8 /* MusicLoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F186628C7280900EE49D8 /* MusicLoadingFooter.swift */; };
@@ -58,7 +57,6 @@
 		1512C125284790CB009D52B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1512C12C2847924D009D52B8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		152068E42847BDA3008F15F1 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
-		152F185928C666CA00EE49D8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		152F185E28C720B900EE49D8 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		152F186328C721AF00EE49D8 /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
 		152F186628C7280900EE49D8 /* MusicLoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoadingFooter.swift; sourceTree = "<group>"; };
@@ -127,19 +125,13 @@
 		1512C116284790C9009D52B8 /* AppStoreJSONApis */ = {
 			isa = PBXGroup;
 			children = (
+				1512C125284790CB009D52B8 /* Info.plist */,
+				15DEC29328E062D400D9994E /* Supporting files */,
 				15F9D03B284B7D4A002899B4 /* Service */,
 				15F7DAEF2848E33300440ADD /* Helpers */,
 				15F9CFF52849F969002899B4 /* Model */,
 				15FE33DB2848C2AD00A91DDB /* Views */,
 				152068E32847BD5B008F15F1 /* Controllers */,
-				1512C120284790CB009D52B8 /* Assets.xcassets */,
-				15BA4076284DF9E000638519 /* Main.storyboard */,
-				1512C117284790C9009D52B8 /* AppDelegate.swift */,
-				1512C119284790C9009D52B8 /* SceneDelegate.swift */,
-				15BA4079284DF9EB00638519 /* ViewController.swift */,
-				1512C122284790CB009D52B8 /* LaunchScreen.storyboard */,
-				1512C125284790CB009D52B8 /* Info.plist */,
-				152F185928C666CA00EE49D8 /* .gitignore */,
 			);
 			path = AppStoreJSONApis;
 			sourceTree = "<group>";
@@ -231,6 +223,19 @@
 				15337447286063A600F4F35A /* ReviewController.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		15DEC29328E062D400D9994E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1512C120284790CB009D52B8 /* Assets.xcassets */,
+				15BA4076284DF9E000638519 /* Main.storyboard */,
+				1512C117284790C9009D52B8 /* AppDelegate.swift */,
+				1512C119284790C9009D52B8 /* SceneDelegate.swift */,
+				15BA4079284DF9EB00638519 /* ViewController.swift */,
+				1512C122284790CB009D52B8 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		15F7DAEF2848E33300440ADD /* Helpers */ = {
@@ -350,7 +355,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152F185A28C666CA00EE49D8 /* .gitignore in Resources */,
 				15BA4077284DF9E000638519 /* Main.storyboard in Resources */,
 				1512C124284790CB009D52B8 /* LaunchScreen.storyboard in Resources */,
 				1512C121284790CB009D52B8 /* Assets.xcassets in Resources */,

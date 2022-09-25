@@ -9,7 +9,7 @@ import UIKit
 
 class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    fileprivate let appId: String
+    private let appId: String
     
     let detailCellId = "detailCellId"
     let previewCellId = "previewCellId"
@@ -35,14 +35,14 @@ class AppDetailController: BaseListController, UICollectionViewDelegateFlowLayou
         fetchData()
     }
     
-    fileprivate func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.backgroundColor = .white
         collectionView.register(AppDetailCell.self, forCellWithReuseIdentifier: detailCellId)
         collectionView.register(PreviewCell.self, forCellWithReuseIdentifier: previewCellId)
         collectionView.register(ReviewRowCell.self, forCellWithReuseIdentifier: reviewCellId)
     }
     
-    fileprivate func fetchData() {
+    private func fetchData() {
         print("HEre is my app", appId)
         let urlString = "https://itunes.apple.com/lookup?id=\(appId)"
         Service.shared.fetchGenericJSONData(urlString: urlString) { (result: SearchResult?, err) in

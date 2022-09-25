@@ -8,6 +8,7 @@
 import UIKit
 
 class HorizontalSnappingController: UICollectionViewController {
+    
     init() {
         let layout = SnappingLayout()
         layout.scrollDirection = .horizontal
@@ -21,7 +22,7 @@ class HorizontalSnappingController: UICollectionViewController {
 }
 
 class SnappingLayout: UICollectionViewFlowLayout {
-    // Found this on StackOverflow
+
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = collectionView else { return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity) }
         let parent = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)

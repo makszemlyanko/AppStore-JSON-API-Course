@@ -11,7 +11,7 @@ class Service {
     
     static let shared = Service() // singleton
     
-    // MARK: - Saerch Music
+    // MARK: - Search Music
     func fetchMusic(searchTerm: String, offset: String, completion: @escaping (MusicResult?, Error?) -> ()) {
         print("Fetching iTunes Music")
         
